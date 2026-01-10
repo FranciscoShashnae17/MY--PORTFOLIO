@@ -2,121 +2,285 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Your Name | IT Portfolio</title>
+    <title>Shashnae Gayle V. Francisco | IT Portfolio</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
         /* General Styles */
-        body {
-            font-family: Arial, sans-serif;
+        * {
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
-            background-color: #eee9ee;
-            color: #c42ab7;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #333;
+            min-height: 100vh;
         }
  
         a {
             text-decoration: none;
-            color: #4294b9;
+            color: #667eea;
+            transition: all 0.3s ease;
         }
  
         a:hover {
-            text-decoration: underline;
+            color: #764ba2;
+            transform: translateY(-2px);
         }
  
         /* Header & Navigation */
         header {
-            background-color: #e37eec;
-            color: #7c1674;
-            padding: 20px 10%;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            padding: 30px 10%;
             text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
         }
  
         header h1 {
-            margin: 0;
-            font-size: 2rem;
+            font-size: 2.5rem;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 8px;
+            font-weight: 700;
+        }
+
+        header p {
+            color: #666;
+            font-size: 1.1rem;
+            margin-bottom: 20px;
         }
  
         nav {
-            margin-top: 10px;
+            margin-top: 15px;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
         }
  
         nav a {
             margin: 0 15px;
-            color: #a73e9e;
-            font-weight: bold;
+            color: #667eea;
+            font-weight: 600;
+            padding: 8px 16px;
+            border-radius: 20px;
+            transition: all 0.3s ease;
+        }
+
+        nav a:hover {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-decoration: none;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
         }
  
         /* Sections */
         section {
-            padding: 50px 10%;
-            max-width: 1000px;
+            padding: 60px 10%;
+            max-width: 1200px;
             margin: 0 auto;
+            background: white;
+            margin-bottom: 30px;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        section:first-of-type {
+            margin-top: 30px;
         }
  
         section h2 {
-            font-size: 1.8rem;
-            margin-bottom: 20px;
-            color: #c443b9;
-            border-bottom: 2px solid #af358b;
+            font-size: 2rem;
+            margin-bottom: 30px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            padding-bottom: 15px;
+            border-bottom: 3px solid #667eea;
             display: inline-block;
-            padding-bottom: 5px;
+            font-weight: 700;
+        }
+
+        section p {
+            color: #555;
+            font-size: 1.1rem;
+            line-height: 1.8;
         }
  
         /* Skills */
         .skills ul {
             list-style: none;
-            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 20px;
         }
  
         .skills li {
-            display: inline-block;
-            margin: 5px 10px;
-            background: #912f91;
-            color: #e67bd4;
-            padding: 8px 12px;
-            border-radius: 20px;
-            font-size: 0.9rem;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 25px;
+            font-size: 1rem;
+            font-weight: 600;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .skills li:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
         }
  
         /* Projects */
         .projects .project {
-            background: #cc76cc;
-            padding: 15px;
-            margin-bottom: 20px;
-            border-radius: 8px;
-            box-shadow: 0px 2px 5px rgba(0,0,0,0.1);
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            padding: 30px;
+            margin-bottom: 25px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+            border-left: 5px solid #667eea;
+            transition: all 0.3s ease;
+        }
+
+        .projects .project:hover {
+            transform: translateX(10px);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
         }
  
         .projects .project h3 {
-            margin-top: 0;
+            color: #667eea;
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .projects .project p {
+            color: #555;
+            line-height: 1.7;
+        }
+
+        .projects .project a {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 8px 20px;
+            background: #667eea;
+            color: white;
+            border-radius: 20px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .projects .project a:hover {
+            background: #764ba2;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(118, 75, 162, 0.4);
         }
  
         /* Certifications & Activities */
         .certifications ul,
         .activities ul {
-            list-style-type: disc;
-            padding-left: 20px;
+            list-style-type: none;
+            padding-left: 0;
+            margin-top: 20px;
+        }
+
+        .certifications li,
+        .activities li {
+            padding: 15px 20px;
+            margin-bottom: 12px;
+            background: #f8f9fa;
+            border-left: 4px solid #667eea;
+            border-radius: 8px;
+            color: #555;
+            font-size: 1.05rem;
+            transition: all 0.3s ease;
+        }
+
+        .certifications li:hover,
+        .activities li:hover {
+            background: #e9ecef;
+            transform: translateX(5px);
+        }
+
+        .certifications li::before,
+        .activities li::before {
+            content: "✓ ";
+            color: #667eea;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        /* Contact */
+        #contact p {
+            margin-bottom: 15px;
+            font-size: 1.1rem;
         }
  
         /* Footer */
         footer {
-            background-color: #7b32be;
-            color: #dd6edd;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            color: #666;
             text-align: center;
-            padding: 20px 10%;
+            padding: 30px 10%;
+            box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.1);
+            margin-top: 30px;
+        }
+
+        footer p {
+            margin-bottom: 10px;
         }
  
         footer a {
-            color: #db64d1;
-            margin: 0 10px;
+            color: #667eea;
+            margin: 0 15px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        footer a:hover {
+            color: #764ba2;
         }
  
         /* Responsive */
         @media (max-width: 768px) {
+            header h1 {
+                font-size: 2rem;
+            }
+
+            nav {
+                flex-direction: column;
+                align-items: center;
+            }
+
             nav a {
-                display: block;
-                margin: 10px 0;
+                margin: 5px 0;
+                width: 80%;
+                text-align: center;
+            }
+
+            section {
+                padding: 40px 6%;
+            }
+
+            section h2 {
+                font-size: 1.6rem;
+            }
+
+            .skills ul {
+                justify-content: center;
             }
         }
     </style>
@@ -126,10 +290,13 @@
     <!-- Header -->
     <header>
         <h1>Shashnae Gayle V. Francisco</h1>
-        <p>IT Student |Game Development</p>
+        <p>IT Student | Game Development</p>
         <nav>
             <a href="#about">About</a>
             <a href="#skills">Skills</a>
+            <a href="#projects">Projects</a>
+            <a href="#certifications">Certifications</a>
+            <a href="#activities">Activities</a>
             <a href="#contact">Contact</a>
         </nav>
     </header>
@@ -138,10 +305,8 @@
     <section id="about">
         <h2>About Me</h2>
         <p>
-            I'am Shashnae Gayle V. Francisco 2ND YEAR BSIT-GD, 19 Years old.My favorite mobile games is CODM, and i also love playing online such as solving mystery.
+             I'am Shashnae Gayle V. Francisco 2ND YEAR BSIT-GD, 19 Years old. My favorite mobile games is CODM, and i also love playing online such as solving mystery.
             My favorite snack is buldak.
-
-            
         </p>
     </section>
  
@@ -155,6 +320,58 @@
         </ul>
     </section>
  
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <h2>Projects</h2>
+        <div class="project">
+            <h3>Project 1: Portfolio</h3>
+            <p>CYour portfolio is a personal website that showcases your professional identity, skills, projects, and achievements as an IT student specializing in Game Development.  <a href="https://github.com/username/portfolio">View on GitHub</a></p>
+        </div>
+        <div class="project">
+            <h3>Project 2: Grade Calculator</h3>
+            <p>A grade calculator is a tool or application that computes a student's academic grades based on their scores in various assignments, tests, quizzes, exams, and other coursework. <a href="https://franciscoshashnae17.github.io/grade-calculator/">View on GitHub</a></p>
+        </div>
+        <!-- Add more projects here -->
+    </section>
+ 
+    <!-- Tesda Certifications Section -->
+    <section id="certifications" class="certifications">
+        <h2>Tesda Certifications </h2>
+        <ul>
+            <li>UX Design Certification</li>
+            <li>Developing Design for User Interface</li>
+            <li>Developing Designs for a Logo</li>
+            <li>Designs for Product Packaging</li>
+            <li>Print Media Design</li>
+            <li>Intro to Visual Graphic Design (VGD)</li>
+            <li>Introduction to CSS (CEE)</li>
+            <li>Microsoft Digital Literacy</li>
+            <li>Installing and Configuring Computer Systems</li>
+            <li>Maintaining Computer Systems and Networks</li>
+            <li>Setting Up Computer Networks</li>
+            <li>Setting Up Computer Servers</li>
+            <li>WiFi 101 and Digital Footprint</li>
+            <li>Smart Technopreneurship 101</li>
+            <li>Google IT Support Professional Certificate (Coursera, 2024)</li>
+            <li>The Complete Web Development Bootcamp (Udemy, 2024)</li>
+            <li>AWS Cloud Practitioner Essentials (AWS Training, 2024)</li>
+            <li>JavaScript Algorithms and Data Structures (freeCodeCamp, 2023)</li>
+            <li>Responsive Web Design Certification (freeCodeCamp, 2023)</li>
+            <li>Python for Everybody Specialization (Coursera, 2023)</li>
+        </ul>
+    </section>
+ 
+    <!-- Extracurricular Activities Section -->
+    <section id="activities" class="activities">
+        <h2>Extracurricular Activities</h2>
+        <ul>
+            <li>Graphics artists - work in various industries including advertising, 
+                publishing, web design, entertainment, and corporate branding. They bridge the gap between art and communication,
+                making information visually appealing and easier to understand.</li>
+            
+        </ul>
+    </section>
+ 
     <!-- Contact Section -->
     <section id="contact">
         <h2>Contact</h2>
@@ -165,10 +382,12 @@
  
     <!-- Footer -->
     <footer>
-        <p>&copy; 2026 Your Name | All Rights Reserved</p>
+        <p>&copy; 2026 Shashnae Gayle V. Francisco | All Rights Reserved</p>
         <p>
             <a href="https://github.com/username">GitHub</a> |
             <a href="https://linkedin.com/in/yourprofile">LinkedIn</a>
         </p>
     </footer>
  
+</body>
+</html>
